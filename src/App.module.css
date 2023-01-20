@@ -1,0 +1,11 @@
+.App {
+  display: flex;
+  flex-direction: column;
+  width: 440px;
+  padding: 20px;
+  flex: 1;
+  background-color: var(--white);
+}
+.header {
+  margin-bottom: 4px;
+}

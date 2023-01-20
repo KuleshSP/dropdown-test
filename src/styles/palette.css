@@ -1,0 +1,14 @@
+:root {
+  --white: #ffffff;
+  --black100: #f4f4f4;
+  --black300: #c1c1c1;
+  --black500: #333333;
+  --edsteinPrimary500: #005ffd;
+  --edsteinPrimary600: #0049d9;
+
+  --text: var(--black500);
+  --background: var(--white);
+
+  --primaryMain: var(--edsteinPrimary500);
+  --primaryDark: var(--edsteinPrimary600);
+}

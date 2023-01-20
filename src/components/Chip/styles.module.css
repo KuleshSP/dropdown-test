@@ -1,0 +1,19 @@
+.chip {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background-color: var(--black100);
+  border-radius: 8px;
+  margin-right: 4px;
+}
+.title {
+  padding: 6px 32px 6px 12px;
+  text-transform: capitalize;
+}
+
+.buttonIcon {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 9.75px;
+}

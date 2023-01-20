@@ -1,0 +1,28 @@
+.container {
+  position: relative;
+  display: flex;
+}
+
+.searchInput {
+  width: 100%;
+  padding: 10px 0 10px 36px;
+  border: none;
+  border-radius: 10px;
+  background-color: var(--black100);
+  color: var(--text);
+  font-size: 16px;
+  line-height: 20px;
+}
+.searchInput::placeholder {
+  color: var(--black300);
+}
+
+.iconSearch {
+  position: absolute;
+  left: 13px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 14px;
+  height: 14px;
+  color: var(--black300);
+}
