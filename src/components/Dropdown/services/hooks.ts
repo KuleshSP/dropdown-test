@@ -3,12 +3,18 @@ import {useState} from 'react';
 import {getSearchByTitle} from '../services/utils';
 import {DropdownList} from './types';
 
-const UseDropdown = (items: DropdownList) => {
+const UseDropdown = (items: DropdownList, multiselect: boolean) => {
   const [searchValue, setSearchValue] = useState<string>('');
   const [isDropdownOpened, toggleDropdown] = useState(false);
   const [checked, setChecked] = useState<string[]>([]);
 
   const handleCheck = (id: string) => {
+    if (!multiselect) {
+      setChecked((prevState) => (prevState[0] !== id ? [id] : []));
+
+      return;
+    }
+
     const checkedIndex = checked.indexOf(id);
     let newChecked: string[] = [];
 

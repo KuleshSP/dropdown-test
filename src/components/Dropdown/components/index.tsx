@@ -14,10 +14,12 @@ import classes from './styles.module.css';
 interface DropdownProps extends ComponentBasePropsWithChildren {
   items: DropdownList;
   onChange: (item: string[]) => void;
+  multiselect?: boolean;
+  hideIcon?: boolean;
 }
 
 const Dropdown = (props: DropdownProps): JSX.Element => {
-  const {className, items, onChange} = props;
+  const {className, items, onChange, multiselect = true, hideIcon = false} = props;
 
   const {
     setSearchValue,
@@ -27,7 +29,7 @@ const Dropdown = (props: DropdownProps): JSX.Element => {
     handleCheck,
     isChecked,
     searchResult,
-  } = useDropdown(items);
+  } = useDropdown(items, multiselect);
 
   useEffect(() => {
     onChange(checked);
@@ -66,7 +68,7 @@ const Dropdown = (props: DropdownProps): JSX.Element => {
 
             return (
               <label key={id} className={classes.label}>
-                <Icon className={classes.labelIcon} />
+                {hideIcon ? null : <Icon className={classes.labelIcon} />}
                 <Typography className={classes.labelTitle}>{title}</Typography>
                 <Checkbox checked={isChecked(id)} onChange={() => handleCheck(id)} />
               </label>
